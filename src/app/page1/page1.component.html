@@ -1,6 +1,23 @@
 <p>
   page1 works!
 </p>
-<a  class="col-1-4" routerLink="/page1/">
-<a  class="col-1-4" routerLink="/page2/">
+<a  class="col-1-4" routerLink="/page1/"></a>
+<a  class="col-1-4" routerLink="/page2/"></a>
 <button (click)="goBack()">go back</button>
+
+
+<p>
+  Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+</p>
+<ngb-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">Check out our awesome new features!</ngb-alert>
+
+<hr>
+
+<p>
+  Show a self-closing success message that disappears after 5 seconds.
+</p>
+<ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}</ngb-alert>
+<p>
+  <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+</p>
+
